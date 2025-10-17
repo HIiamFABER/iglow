@@ -2,12 +2,12 @@ import React from 'react';
 import Palette from '../../theme/palette';
 
 import { CONTACT_EMAIL } from '../../config/AppConfig';
-// import jacketHero from '../../assets/videos/ilgow-loop.mp4';
+import jacketHero from '../../assets/videos/ilgow-loop.mp4';
 import schoeller from '../../assets/images/partners/schoeller.png';
 import systronic from '../../assets/images/partners/systronic.png';
-// import trailer16x9 from '../../assets/videos/trailer/16x9.mp4';
-// import topspot1x1 from '../../assets/videos/topspot/1x1.mp4';
-// import topspot16x9 from '../../assets/videos/topspot/16x9.mp4';
+import trailer16x9 from '../../assets/videos/trailer/16x9.mp4';
+import topspot1x1 from '../../assets/videos/topspot/1x1.mp4';
+import topspot16x9 from '../../assets/videos/topspot/16x9.mp4';
 import trailerThumbnail from '../../assets/images/trailer-thumbnail.png';
 import subtractShape from '../../assets/images/subtract.png';
 import smartJacket from '../../assets/images/smart-jacket.png';
@@ -81,8 +81,8 @@ function HeroSection() {
                 background: 'linear-gradient(180deg, #08080C, transparent)',
               }}
             />
-            {/* Vidéos temporairement désactivées - fichiers manquants */}
-            {/* <Box
+            {/* Vidéos topspot réactivées */}
+            <Box
               component='video'
               src={topspot1x1}
               sx={{
@@ -107,7 +107,7 @@ function HeroSection() {
               loop
               muted
               playsInline
-            /> */}
+            />
             <Box
               sx={{
                 height: '100px',
@@ -526,26 +526,20 @@ function CountdownSection() {
             The Smart Jacket with Turn signals + Brake lights
           </Typography>
           
-          {/* Placeholder pour la vidéo trailer */}
-          <Box
-            sx={{
-              width: '100%',
+          {/* Vidéo trailer réactivée */}
+          <video
+            controls
+            style={{ 
+              width: '100%', 
               maxWidth: '800px',
-              height: '500px',
-              border: '3px dashed #DC0028',
-              borderRadius: '30px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: 'rgba(220, 0, 40, 0.1)',
-              zIndex: 2,
-              margin: '0 auto',
+              borderRadius: '30px', 
+              zIndex: 2 
             }}
+            poster={trailerThumbnail}
           >
-            <Typography variant='h3' sx={{ color: '#DC0028' }}>
-              VIDEO PLACEHOLDER
-            </Typography>
-          </Box>
+            <source src={trailer16x9} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </Box>
 
         <Typography variant='body1' sx={{ mb: 4 }}>
